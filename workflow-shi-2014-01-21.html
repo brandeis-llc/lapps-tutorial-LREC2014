@@ -250,7 +250,7 @@
 
 <h3>Available Services</h3>
     
-<pre class="prettyprint">## ANC's Web servers
+<pre class="prettyprint">## <a href="http://grid.anc.org:8080/service_manager/language-services" target="_blank">ANC's Web servers</a>
 1 <a href="http://gate.ac.uk/" target="_blank">GATE</a>
         1.1  Sentence Splitter
         1.2  Pos Tagger
@@ -277,7 +277,7 @@
         MASC 3
 </pre>
 
-<pre class="prettyprint"> ## Brandeis Web Services
+<pre class="prettyprint"> ## <a href="http://eldrad.cs-i.brandeis.edu:8080/service_manager/language-services" target="_blank">Brandeis Web Services</a>
 1 <a href="http://opennlp.apache.org/" target="_blank">OPENNLP</a>
         1.1  Sentence Splitter
         1.2  Pos Tagger
@@ -285,8 +285,15 @@
         1.4  Named Entity Recognizer
         1.5  Parser
 
-2 <a href="http://nltk.org/" target="_blank">NLTK</a>
-        2.1  <a href="http://eldrad.cs-i.brandeis.edu:8080/python-as-web-service-shi-2013-12-17.html" target="_blank">Pos Tagger</a>
+2 <a href="http://www-nlp.stanford.edu/software/index.shtml" target="_blank">Stanford</a>
+        2.1  Sentence Splitter
+        2.2  Pos Tagger
+        2.3  Tokenizer
+        2.4  Named Entity Recognizer
+        2.5  Parser
+
+3 <a href="http://nltk.org/" target="_blank">NLTK</a>
+        3.1  <a href="http://eldrad.cs-i.brandeis.edu:8080/python-as-web-service-shi-2013-12-17.html" target="_blank">Pos Tagger</a>
 </pre>
 
 
@@ -320,19 +327,19 @@ __________________________________________
     |               |      GATE      |   STANFORD   |  OPENNLP   |  NLTK   |   NC+VC   |
     |----------------------------------------------------------------------------------|
     |  Splitter     |  x:S,          |   x:S        |   x:S      |         |           |
-    |               |  A,            |   A,         |   A,B,     |         |           |
+    |               |  A,            |   A,B,       |   A,B,     |         |           |
     |----------------------------------------------------------------------------------|
     |  Pos Tagger   |  x             |   x          |   x        |  x      |           |
-    |               |  A,            |   A,         |   A,B,     |  B,     |           |
+    |               |  A,            |   A,B,       |   A,B,     |  B,     |           |
     |----------------------------------------------------------------------------------|
     |  Tokenizer    |  X             |   x          |   x        |         |           |
-    |               |  A,            |   A,         |   A,B,     |         |           |
+    |               |  A,            |   A,B,       |   A,B,     |         |           |
     |----------------------------------------------------------------------------------|
-    |  Syntax       |  x:C           |              |   x:P      |         |           |
-    |               |  A,            |              |   B,       |         |           |
+    |  Syntax       |  x:C           |   x          |   x:P      |         |           |
+    |               |  A,            |   B,         |   B,       |         |           |
     |----------------------------------------------------------------------------------|
     |  Ner          |  x             |   x          |   x        |         |           |
-    |               |  A,            |   A,         |   A,B,     |         |           |
+    |               |  A,            |   A,B,       |   A,B,     |         |           |
     |----------------------------------------------------------------------------------|
     |  Coref        |  x             |              |            |         |           |
     |               |  A,            |              |            |         |           |
