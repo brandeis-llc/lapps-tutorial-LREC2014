@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+    <meta charset="utf-8" />
+    <head>
+    <title>Software Installation</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>             
+    <style>      
+        body, p, td, pre {
+            font-size: 14pt; }
+        
+        body {  
+            background-color:lightyellow; 
+            counter-reset: section subsection figure;}
+        
+        h1 {
+            text-align:center }
+        
+        h2 {
+            counter-increment: section; }    
+
+        h3 {
+            counter-increment: subsection; }
+        
+        h4 {
+            counter-increment: figure; }
+        
+        h2:before {
+            content:counter(section) ". "; }
+        
+        h3:before {
+            content:counter(section) "." counter(subsection) " "; }
+        
+        h4:before{
+            content:"Fig. " counter(section) "." counter(figure) " - ";}
+        
+        .reset {
+            counter-reset:subsection figure;}
+        
+        .nav-bar{
+            list-style-type:none;
+            margin:0;
+            padding:0; }
+        
+        img {
+            margin-left: 10pt;
+            border: thin solid gray; }
+        
+        .sample { 
+            background-color: black;
+            font-size: 12pt;
+            color:white;
+            padding: 4pt;
+            margin-left: 10pt;
+            margin-right: 30pt; 
+            display: block;
+            white-space: pre-line;}
+        
+        .code { 
+            padding: 4pt;
+            font-size: 12pt;
+            background-color: whitesmoke;
+            border: thin dotted gray;
+            margin-left: 10pt;
+            margin-right: 30pt; 
+            display: block; 
+            white-space: pre;}
+        
+        .author {
+            font-size: 16pt; 
+            text-align:center;}
+
+        /*  grid tables  */
+        table.g {
+        margin: 8px;
+        border-width: 1px;
+        border-color: gray;
+        border-collapse: collapse; }
+
+        table.g th {
+        border-width: 1px;
+        padding: 8px 8px 8px 8px;
+        border-style: solid;
+        border-color: gray;
+        background-color: lightyellow; }
+
+        table.g td {
+        text-align:center;
+        border-width: 1px;
+        padding: 8px 8px 8px 8px;
+        border-style:solid;
+        border-color: gray;
+        background-color: #ffffff; }
+
+        /*  vertical tables  */
+        table.v {
+        margin: 8px;
+        border-collapse: collapse; }
+
+        table.v thead {
+        border-right: 10px solid;
+        border-left: 10px solid;
+        background: #fc9;
+        border-color: #fc9;}
+
+        table.v th {
+        padding: 4px 20px 4px 20px;
+        border: 1px #fff solid; }
+
+        table.v tbody{
+        text-align:left;
+        border-right: 10px solid;
+        border-left: 10px solid;
+        border-color: #adf;
+        background: #adf;
+        vertical-align: top; }
+
+        table.v td {
+        padding:  4px 20px 4px 20px;
+        border: 1px #fff solid; }
+
+        /*  horizontal tables  */
+        table.h {
+        margin: 8px;
+        border-collapse:collapse; }
+
+        table.h th {
+        padding:  4px 40px 4px 40px;
+        border:1px solid #98bf21;
+        background-color:#A7C942;
+        color:#fff; }
+
+        table.h td {
+        text-align:center;
+        border:1px solid #98bf21;
+        padding: 4px 40px 4px 40px; }
+
+        table.h tr.alt td {
+        color:#000;
+        background-color:#EAF2D3; }
+        
+        </style></head>
+<body>
+    <a name="_top_" />
+    <nav class="nav-bar">
+        <a href="#install-lvm">lappsvm</a>
+    </nav>
+    
+    <h1>Software Installation Tips</h1>
+    <p class="author">
+ Version <var>0.01</var>, Apr. 2014</p>
+    
+<h2>Introduction</h2>
+    The language application grid (Lapps) project requires  development  software support.
+    Here are the software, and the required ones are in bold font style.
+    <ul>
+        <li>
+            <em>Development Language</em> : Lapps chooses Java as 1st development language, according its acceptable running
+            speed, development easiness and a large number of library. E.g. OpenNLP, Stanford NLP, and UIMA are all Java projects.
+
+        </li>
+        <li>
+            <em>Dependency Management</em> : Maven is the most popular one for Java development.
+        </li>
+        <li>
+            <em>Source Code Management</em> : With several  developers in different groups, we would like to hold our source codes in <a href="https://github.com/" target="_blank" >Github</a>. It will be much easier to cooperate.
+        </li>
+        <li>
+            <em>Development Environment</em> : Eclipse or IntelliJ are IDE of Java development. They are optional and helpful for Java syntax check and prediction.
+        </li>
+    </ul>
+
+    <table  class="v"><tbody><tr>
+        <th>Development</th><th>Software</th><th>Version</th><th>Download & Install</th><th>Description</th> </tr><tr>
+        <td>Development language</td><td>Java</td><td>1.6</td><td>Please install <a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR" target="_blank">jdk 6</a></td><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html?ssSourceSiteId=otnjp" target="_blank">Java</a> is the main development language.</td> </tr><tr>
+
+        <td>Dependency management</td><td>Maven</td><td>3.x</td><td>Here are <a href="http://maven.apache.org/download.cgi" target="_blank">download and installation</a> instructions .</td><td><a href="http://maven.apache.org/" target="_blank">Maven</a>  is a popular dependency library management support</td> </tr><tr>
+
+        <td>Source code management</td><td>Git</td><td>1.8 + </td><td>You can install and <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git" target="_blank"> get started</a>.</td><td>Git is very useful version management software, and we.</td> </tr><tr>
+
+        <td rowspan="2">Integrated development environment (IDE) </td><td>Eclipse</td><td>4.x</td><td>Installation is just <a href="https://www.eclipse.org/downloads/" target="_blank">download</a> and unpack it. </td><td>Eclipse is the most popular Java IDE.</td> </tr><tr>
+        <td>IntelliJ</td><td>13.x</td><td>You also can <a href="http://www.jetbrains.com/idea/" target="_blank">download</a> [, pay] and use.  </td><td>Its commercial version is called the best Java IDE, but it costs you dollars. You can try its community version, and it works fine.</td> </tr><tr>
+    </tr></tbody></table>
+
+    If you already have the required java, maven and git software in proper version installed, you can use existing software.
+<a name="install-ldm" />
+<h2>LappsVM Installation<a href="#_top_" style="text-decoration: none;">^</a></h2>
+<h3  class="reset">What is LappsVM?</h3>
+
+<p> We design Lapps software version management tool named <a href="https://github.com/chunqishi/lappsvm" target="_blank">LappsVM</a>, which is inspired by <a href="http://gvmtool.net/" target="_blank">GVM project</a>. LappsVM is much simple.
+Here is the steps to install maven through LappsVM.
+</p>
+
+
+<samp class="sample">[shicq@chilote ~]$ curl -s eldrad.cs-i.brandeis.edu:8080/lappsvm/ | bash <font style="color:blue">&crarr; Install LappsVM</font>
+
+    Thanks for using Lapps Version Manager!
+    .
+    .
+    source "/home/j/llc/shicq/.lappsvm/bin/lappsvm-init.sh"
+    .
+    .
+    Enjoy!!!
+
+    [shicq@chilote ~]$ source "/home/j/llc/shicq/.lappsvm/bin/lappsvm-init.sh" <font style="color:blue">&crarr; Load LappsVM commands</font>
+    [shicq@chilote ~]$ lappsvm help <font style="color:blue">&crarr; Test LappsVM commands</font>
+
+    [shicq@chilote ~]$ lappsvm install maven <font style="color:blue">&crarr; Install Maven through LappsVM</font>
+
+    downloading: maven 3.2.1
+
+    [shicq@chilote ~]$ mvn -version <font style="color:blue">&crarr; Test installed Maven</font>
+
+
+</samp>
+
+<h2>Manually Installation</h2>
+
+<h2>TestCase</h2>
+
+    
+<footer><hr/> 
+<!--<p>-->
+    <!--Progress: -->
+    <!--<progress value="80" max="100"></progress></p>-->
+<p>
+    Contacts: 
+    <nonsense>shi</nonsense>cq@<nonsense>cs.</nonsense>brandeis.<nonsense></nonsense>edu,
+    <nonsense>mar</nonsense>c@<nonsense>cs.</nonsense>brandeis.<nonsense></nonsense>edu</p></footer>
+    
+    </body></html>
