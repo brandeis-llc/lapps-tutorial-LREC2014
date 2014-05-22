@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html style="background-color:WhiteSmoke  ">
+<head>
+    <title>Tutorial 8 of LREC 2014 </title>
+    <style>
+        body, p, td, pre {
+            font-size: 12pt; }
+
+        body {
+            background-color: white;
+            margin-left:10%;
+            margin-right:10%;
+            border: 1px solid;
+            border-radius:5px;
+            min-height: 100%;
+            width: 80%;
+            padding-top: 5pt;
+            padding-left: 20pt;
+            padding-right: 20pt;
+            }
+
+        h1 {
+            text-align:center;
+            font-family:"Comic Sans MS", cursive, sans-serif;
+            }
+
+        h2 {
+            counter-increment: section; }
+
+        h3 {
+            counter-increment: subsection; }
+
+        h4 {
+            counter-increment: figure; }
+
+        h2:before {
+            content:"Part " counter(section, upper-roman) ". "; }
+
+        h3:before {
+            content: counter(subsection) " "; }
+
+        h4:before{
+            content:"Fig. " counter(section) "." counter(figure) " - ";}
+
+        .reset {
+            counter-reset:subsection figure;}
+
+        .nav-bar{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            font-family:Arial, Helvetica, sans-serif }
+
+        img {
+            margin-left: 10pt;
+            border: thin solid gray; }
+
+        .sample {
+            background-color: black;
+            font-size: 12pt;
+            color:white;
+            padding: 4pt;
+            margin-left: 10pt;
+            margin-right: 30pt;
+            display: block;
+            white-space: pre-line;}
+
+        .code {
+            padding: 4pt;
+            font-size: 12pt;
+            background-color: whitesmoke;
+            border: thin dotted gray;
+            margin-left: 10pt;
+            margin-right: 30pt;
+            display: block;
+            white-space: pre-line;}
+
+        .author {
+            font-size: 16pt;
+            text-align:center;}
+
+        /*  grid tables  */
+        table.g {
+            margin: 8px;
+            border-width: 1px;
+            border-color: gray;
+            border-collapse: collapse; }
+
+        table.g th {
+            border-width: 1px;
+            padding: 8px 8px 8px 8px;
+            border-style: solid;
+            border-color: gray;
+            background-color: lightyellow; }
+
+        table.g td {
+            text-align:center;
+            border-width: 1px;
+            padding: 8px 8px 8px 8px;
+            border-style:solid;
+            border-color: gray;
+            background-color: #ffffff; }
+
+        /*  vertical tables  */
+        table.v {
+            margin: 8px;
+            border-collapse: collapse; }
+
+        table.v thead {
+            border-right: 10px solid;
+            border-left: 10px solid;
+            background: #fc9;
+            border-color: #fc9;}
+
+        table.v th {
+            padding: 4px 20px 4px 20px;
+            border: 1px #fff solid; }
+
+        table.v tbody{
+            text-align:left;
+            border-right: 10px solid;
+            border-left: 10px solid;
+            border-color: #adf;
+            background: #adf;
+            vertical-align: top; }
+
+        table.v td {
+            padding:  4px 20px 4px 20px;
+            border: 1px #fff solid; }
+
+        /*  horizontal tables  */
+        table.h {
+            margin: 8px;
+            border-collapse:collapse; }
+
+        table.h th {
+            padding:  4px 40px 4px 40px;
+            border:1px solid #98bf21;
+            background-color:#A7C942;
+            color:#fff; }
+
+        table.h td {
+            text-align:center;
+            border:1px solid #98bf21;
+            padding: 4px 40px 4px 40px; }
+
+        table.h tr.alt td {
+            color:#000;
+            background-color:#EAF2D3; }
+        /**
+            http://learnlayout.com/inline-block.html
+            http://www.w3schools.com/cssref/css_colornames.asp
+        **/
+
+        div.link {
+            display: inline-block;
+            width: 80px;
+            height: 100px;
+            position: relative;
+            text-align:center;
+            vertical-align: middle;
+        }
+        div.black {
+            border-color: Black ;
+            border-width: 2px;
+        }
+
+        div.black span.h {
+            background-color: Black       ;
+            color: Snow ;
+        }
+
+
+        div.white {
+            border-color: Lavender  ;
+            border-width: 2px;
+        }
+
+        div.white span.h {
+            background-color: Snow       ;
+            color: Black ;
+        }
+
+        div.red {
+            border-color: HotPink
+        }
+
+        div.red span.h {
+            background-color: HotPink       ;
+            color: LightCyan;
+        }
+        div.yellow {
+            border-color: GoldenRod
+        }
+
+        div.yellow span.h {
+            background-color: GoldenRod    ;
+            color: Azure ;
+        }
+        div.blue {
+            border-color: DodgerBlue
+        }
+
+        div.blue span.h {
+            background-color: DodgerBlue     ;
+            color: Snow ;
+        }
+        div.green {
+            border-color: ForestGreen
+        }
+
+        div.green span.h {
+            background-color: MediumSeaGreen    ;
+            color: Ivory   ;
+        }
+
+        div.box {
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+            margin: 8px;
+            border-style:solid;
+            border-width: 1.5px;
+            position: relative;
+            text-align:center;
+            vertical-align: middle;
+        }
+
+        div.box span.h {
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align:left;
+            padding: 1px 2px 2px 1px;
+            position: absolute;
+            font-weight:bold;
+            line-height: 1em;
+            vertical-align: middle;
+        }
+
+        hr.double {
+            padding: 0;
+            border: none;
+            border-top: medium double MidnightBlue;
+            color: MidnightBlue;
+            text-align: center; }
+        </style>
+</head>
+<body>
+<a name="_top_" />
+<nav class="nav-bar">
+    <a href="#introduction"> introduction</a>
+    |
+    <a href="#lapps-grid">lapps grid</a>
+    |
+    <a href="#exercise">exercise</a></nav>
+
+<hr style=" border: 0; border-bottom: 1px dashed white; background: MidnightBlue;"/>
+<h1>Web Services for Effective NLP Application <br/>  Development and Evaluation</h1>
+<p style="text-align:center; font-size:18pt">Using and Contributing to the Language Application (LAPPS) Grid</p>
+<p style="text-align:center; font-size:16pt; font-style:italic; ">Time: PM, Mon May 26, 2014 &nbsp; &nbsp;  Location:      Stemma 1-2</p>
+<hr style="height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px MidnightBlue  " />
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------>
+<a name="introduction"></a>
+<h2>Introduction </h2>
+<h3>Overview of web service technology</h3>
+
+<h3>The LAPPS Grid</h3>
+
+
+<div class="black box"> <span class="h">Slides</span> <p> <br/> <a href="introduction.pdf">Introduction</a>   </p> </div>
+<div class="black box"> <span class="h">Existent Services</span> <p> <br/>
+
+<a href="http://grid.anc.org:8080/service_manager/">ANC</a> &nbsp;
+<a href="http://eldrad.cs-i.brandeis.edu/service_manager/">Brandeis</a>
+
+</p> </div>
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }" />
+<a name="lapps-grid"></a>
+<h2>Contributing to the LAPPS Grid <a href="#_top_" style="text-decoration: none;">^</a></h2>
+<h3 class="reset">Wrapping tools as web services</h3>
+<h3>Mapping input and output to the exchange vocabulary</h3>
+<h3>Registering tools in the LAPPS Grid</h3>
+
+<div class="black box"> <span class="h">Slides</span> <p> <br/> <a href="contributing.pdf">Contributing</a>   </p> </div>
+<div class="black box"> <span class="h">Templates</span> <p> <br/></p> </div>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------>
+<!--<hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }">-->
+<hr style=" border: 0; height: 1px; background: #333; background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); background-image: -moz-linear-gradient(left, #ccc, #333, #ccc); background-image: -ms-linear-gradient(left, #ccc, #333, #ccc); background-image: -o-linear-gradient(left, #ccc, #333, #ccc); "/>
+<p style="font-size:18pt"> <b>Coffee-Break</b></p>
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------>
+<hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }">
+<a name="exercise"></a>
+<h2>Using the LAPPS Grid: Hands-on exercise<a href="#_top_" style="text-decoration: none;">^</a></h2>
+
+
+<h3 class="reset">Using the composer</h3>
+
+<div class="black box"> <span class="h">Slides</span> <p> <br/> <a href="document.pdf">Document</a>   </p> </div>
+<div class="black box"> <span class="h">Examples</span> <p> <br/></p> </div>
+
+
+
+<footer>
+<hr class="double"/>
+<p style="text-align:center">
+    Contacts:
+    <br/>&nbsp; &nbsp; <a href="http://www.cs.brandeis.edu/~jamesp/"> James Pustejovsky</a>
+    (<nonsense>jame</nonsense>sp@<nonsense>cs.</nonsense>brandeis.<nonsense></nonsense>edu), &nbsp;
+    <a href="http://www.cs.vassar.edu/~ide/"> Nancy Ide</a>
+    (<nonsense>id</nonsense>e@<nonsense>cs.</nonsense>vassar.<nonsense></nonsense>edu), <br/>
+    &nbsp; &nbsp; <a href="https://www.ldc.upenn.edu/staff/christopher-cieri"> Christopher Cieri</a>
+    (<nonsense>ccie</nonsense>ri@<nonsense>ldc.</nonsense>upenn.<nonsense></nonsense>edu),&nbsp;
+    <a href="http://www.cs.cmu.edu/~ehn/"> Eric Nyberg</a>
+    (<nonsense>eh</nonsense>n@<nonsense>cs.</nonsense>cmu.<nonsense></nonsense>edu)
+
+</p>
+</footer>
+<p style="text-align:center">Copyright &copy; 2014 LAPPS GRID - All Rights Reserved</p>
+</body>
+</html>
