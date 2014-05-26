@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html style="background-color:WhiteSmoke  ">
+<head>
+    <title>Tutorial 8 of LREC 2014 </title>
+    <style>
+        body, p, td, pre {
+            font-size: 12pt; }
+
+        body {
+            background-color: white;
+            margin-left:10%;
+            margin-right:10%;
+            border: 1px solid;
+            border-radius:5px;
+            min-height: 100%;
+            width: 80%;
+            padding-top: 5pt;
+            padding-left: 20pt;
+            padding-right: 20pt;
+            }
+
+        h1 {
+            text-align:center;
+            }
+
+        h2 {
+            counter-increment: section; }
+
+        h3 {
+            counter-increment: subsection; }
+
+        h4 {
+            counter-increment: figure; }
+
+        <!--h2:before {-->
+            <!--content:"Part " counter(section, upper-roman) ". "; }-->
+
+        <!--h3:before {-->
+            <!--content: counter(subsection) " "; }-->
+
+        <!--h4:before{-->
+            <!--content:"Fig. " counter(section) "." counter(figure) " - ";}-->
+
+        .reset {
+            counter-reset:subsection figure;}
+
+        .nav-bar{
+            list-style-type:none;
+            margin:0;
+            padding:0;}
+
+        img {
+            margin-left: 10pt;
+            border: thin solid gray; }
+
+        .sample {
+            background-color: black;
+            font-size: 12pt;
+            color:white;
+            padding: 4pt;
+            margin-left: 10pt;
+            margin-right: 30pt;
+            display: block;
+            white-space: pre-line;}
+
+        .code {
+            padding: 4pt;
+            font-size: 12pt;
+            background-color: whitesmoke;
+            border: thin dotted gray;
+            margin-left: 10pt;
+            margin-right: 30pt;
+            display: block;
+            white-space: pre-line;}
+
+        .author {
+            font-size: 16pt;
+            text-align:center;}
+
+        /*  grid tables  */
+        table.g {
+            margin: 8px;
+            border-width: 1px;
+            border-color: gray;
+            border-collapse: collapse; }
+
+        table.g th {
+            border-width: 1px;
+            padding: 8px 8px 8px 8px;
+            border-style: solid;
+            border-color: gray;
+            background-color: lightyellow; }
+
+        table.g td {
+            text-align:center;
+            border-width: 1px;
+            padding: 8px 8px 8px 8px;
+            border-style:solid;
+            border-color: gray;
+            background-color: #ffffff; }
+
+        /*  vertical tables  */
+        table.v {
+            margin: 8px;
+            border-collapse: collapse; }
+
+        table.v thead {
+            border-right: 10px solid;
+            border-left: 10px solid;
+            background: #fc9;
+            border-color: #fc9;}
+
+        table.v th {
+            padding: 4px 20px 4px 20px;
+            border: 1px #fff solid; }
+
+        table.v tbody{
+            text-align:left;
+            border-right: 10px solid;
+            border-left: 10px solid;
+            border-color: #adf;
+            background: #adf;
+            vertical-align: top; }
+
+        table.v td {
+            padding:  4px 20px 4px 20px;
+            border: 1px #fff solid; }
+
+        /*  horizontal tables  */
+        table.h {
+            margin: 8px;
+            border-collapse:collapse; }
+
+        table.h th {
+            padding:  4px 40px 4px 40px;
+            border:1px solid #98bf21;
+            background-color:#A7C942;
+            color:#fff; }
+
+        table.h td {
+            text-align:center;
+            border:1px solid #98bf21;
+            padding: 4px 40px 4px 40px; }
+
+        table.h tr.alt td {
+            color:#000;
+            background-color:#EAF2D3; }
+        /**
+            http://learnlayout.com/inline-block.html
+            http://www.w3schools.com/cssref/css_colornames.asp
+        **/
+
+        div.link {
+            display: inline-block;
+            width: 80px;
+            height: 100px;
+            position: relative;
+            text-align:center;
+            vertical-align: middle;
+        }
+        div.black {
+            border-color: Black ;
+            border-width: 2px;
+        }
+
+        div.black span.h {
+            background-color: Black       ;
+            color: Snow ;
+        }
+
+
+        div.white {
+            border-color: DarkBlue  ;
+            border-width: 2px;
+        }
+
+        div.white span.h {
+            background-color: Navy   ;
+            color: White ;
+        }
+
+        div.red {
+            border-color: HotPink
+        }
+
+        div.red span.h {
+            background-color: HotPink       ;
+            color: LightCyan;
+        }
+        div.yellow {
+            border-color: GoldenRod
+        }
+
+        div.yellow span.h {
+            background-color: GoldenRod    ;
+            color: Azure ;
+        }
+        div.blue {
+            border-color: DodgerBlue
+        }
+
+        div.blue span.h {
+            background-color: DodgerBlue     ;
+            color: Snow ;
+        }
+        div.green {
+            border-color: ForestGreen
+        }
+
+        div.green span.h {
+            background-color: MediumSeaGreen    ;
+            color: Ivory   ;
+        }
+
+        div.box {
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+            margin: 8px;
+            border-style:solid;
+            border-width: 1.5px;
+            position: relative;
+            text-align:center;
+            vertical-align: middle;
+        }
+
+        div.box span.h {
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align:left;
+            padding: 1px 2px 2px 1px;
+            position: absolute;
+            font-weight:bold;
+            line-height: 1em;
+            vertical-align: middle;
+        }
+
+        hr.double {
+            padding: 0;
+            border: none;
+            border-top: medium double MidnightBlue;
+            color: MidnightBlue;
+            text-align: center; }
+
+        a.nolink {text-decoration: none; color: black;}
+        </style>
+</head>
+<body>
+<h1>Maven Environment Setup</h1>
+<hr />
+<p>Maven is Java based tool, so the very first requirement is to have JDK installed in your machine.</p>
+<h2>System Requirement</h2>
+<table class="v">
+<tr><th>JDK</th><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank"> 1.7.0</a></td></tr>
+<tr><th>Memory</th><td>no minimum requirement.</td></tr>
+<tr><th>Disk Space</th><td>no minimum requirement.</td></tr>
+<tr><th>Operating System</th><td>no minimum requirement.</td></tr>
+</table>
+<h2>Step 1 - verify Java installation in your machine</h2>
+<p>Now open console and execute the following <b>java</b> command.</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Task</th><th>Command</th></tr>
+<tr><td>Windows</td><td>Open Command Console</td><td>c:\&gt; java -version</td></tr>
+<tr><td>Linux</td><td>Open Command Terminal</td><td>$ java -version</td></tr>
+<tr><td>Mac</td><td>Open Terminal</td><td>machine:~ joseph$ java -version</td></tr>
+</table>
+<p>Let's verify the output for all the operating systems:</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>
+java version "1.7.0_55" <br/>
+Java(TM) SE Runtime Environment<br/>
+Java HotSpot(TM) Client VM
+</td></tr>
+<tr><td>Linux</td><td>
+java version "1.7.0_55" <br/>
+Java(TM) SE Runtime Environment<br/>
+Java HotSpot(TM) Client VM
+</td></tr>
+<tr><td>Mac</td><td>
+java version "1.7.0_55" <br/>
+Java(TM) SE Runtime Environment<br/>
+Java HotSpot(TM)64-Bit Server VM
+</td></tr>
+</table>
+<p>If you do not have Java installed, install the Java Software Development Kit (SDK) from  <a target="_blank" rel="nofollow" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>. We are assuming Java 1.7.0_55 as installed version for this tutorial.</p>
+<h2>Step 2: Set JAVA environment</h2>
+<p>Set the <b>JAVA_HOME</b> environment variable to point to the base directory location where Java is installed on your machine. For example</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>Set the environment variable JAVA_HOME to C:\Program Files\Java\jdk1.7.0_55</td></tr>
+<tr><td>Linux</td><td>export JAVA_HOME=/usr/local/java-current</td></tr>
+<tr><td>Mac</td><td>export JAVA_HOME=/Library/Java/Home</td></tr>
+</table>
+<p>Append Java compiler location to System Path.</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>Append the string ;C:\Program Files\Java\jdk1.7.0_55\bin to the end of the system variable, Path.</td></tr>
+<tr><td>Linux</td><td>export PATH=$PATH:$JAVA_HOME/bin/</td></tr>
+<tr><td>Mac</td><td>not required</td></tr>
+</table>
+<p>Verify Java Installation using <b>java -version</b> command explained above.</p>
+<h2>Step 3: Download Maven archive</h2>
+<p>Download Maven 3.2.1 from <a target="_blank" rel="nofollow" href="http://maven.apache.org/download.html">http://maven.apache.org/download.html</a></p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Archive name</th></tr>
+<tr><td>Windows</td><td>apache-maven-3.2.1-bin.zip</td></tr>
+<tr><td>Linux</td><td>apache-maven-3.2.1-bin.tar.gz</td></tr>
+<tr><td>Mac</td><td>apache-maven-3.2.1-bin.tar.gz</td></tr>
+</table>
+<h2>Step 4: Extract the Maven archive</h2>
+<p>Extract the archive, to the directory you wish to install Maven 3.2.1. The subdirectory apache-maven-3.2.1 will be created from the archive.</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Location (can be different based on your installation)</th></tr>
+<tr><td>Windows</td><td>C:\Program Files\Apache Software Foundation\apache-maven-3.2.1</td></tr>
+<tr><td>Linux</td><td> /usr/local/apache-maven</td></tr>
+<tr><td>Mac</td><td>/usr/local/apache-maven</td></tr>
+</table>
+<h2>Step 5: Set Maven environment variables</h2>
+<p>Add M2_HOME, M2, MAVEN_OPTS to environment variables.</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>Set the environment variables using system properties. <br/>
+<p><i>M2_HOME=C:\Program Files\Apache Software Foundation\apache-maven-3.2.1</i></p>
+<p><i>M2=%M2_HOME%\bin</i></p>
+<p><i>MAVEN_OPTS=-Xms256m -Xmx512m</i></p>
+</td></tr>
+<tr><td>Linux</td><td>Open command terminal and set environment variables.<br/>
+<p><i>export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.1</i></p>
+<p><i>export M2=%M2_HOME%\bin</i></p>
+<p><i>export MAVEN_OPTS=-Xms256m -Xmx512m</i></p>
+</td></tr>
+<tr><td>Mac</td><td>Open command terminal and set environment variables.<br/>
+<p><i>export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.1</i></p>
+<p><i>export M2=%M2_HOME%\bin</i></p>
+<p><i>export MAVEN_OPTS=-Xms256m -Xmx512m</i></p>
+</td></tr>
+</table>
+<h2>Step 6: Add Maven bin directory location to system path</h2>
+<p>Now append M2 variable to System Path</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>Append the string ;%M2% to the end of the system variable, Path.</td></tr>
+<tr><td>Linux</td><td>export PATH=$M2:$PATH</td></tr>
+<tr><td>Mac</td><td>export PATH=$M2:$PATH</td></tr>
+</table>
+<h2>Step 8: Verify Maven installation</h2>
+<p>Now open console, execute the following <b>mvn</b> command.</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Task</th><th>Command</th></tr>
+<tr><td>Windows</td><td>Open Command Console</td><td>c:\&gt; mvn --version</td></tr>
+<tr><td>Linux</td><td>Open Command Terminal</td><td>$ mvn --version</td></tr>
+<tr><td>Mac</td><td>Open Terminal</td><td>machine:~ joseph$ mvn --version</td></tr>
+</table>
+<p>Finally, verify the output of the above commands, which should be something as follows:</p>
+<table class="v">
+<tr><th style="width:20%">OS</th><th>Output</th></tr>
+<tr><td>Windows</td><td>
+Apache Maven 3.2.1<br/>
+Java version: 1.7.0_55 <br/>
+Java home: C:\Program Files\Java\jdk1.7.0_55\jre
+</td></tr>
+<tr><td>Linux</td><td>
+Apache Maven 3.2.1<br/>
+Java version: 1.7.0_55 <br/>
+Java home: C:\Program Files\Java\jdk1.7.0_55\jre
+</td></tr>
+<tr><td>Mac</td><td>
+Apache Maven 3.2.1 <br/>
+Java version: 1.7.0_55 <br/>
+Java home: C:\Program Files\Java\jdk1.7.0_55\jre
+</td></tr>
+</table>
+<p>Congratulations! you are now all set to use Apache Maven for your projects.</p>
+</body>
+</html>
